@@ -234,3 +234,8 @@ body{
   width: 300px;
   height: 300px;
 }
+
+/* logo section */
+.api{
+  filter: drop-shadow(4px 4px 10px rgba(230, 182, 51, 0.7));
+}
