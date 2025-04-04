@@ -1,10 +1,11 @@
 /* Navbar */
-body{
-  background-color: #3F4F44;
+body {
+  background-color: #3f4f44;
   height: 10000vh;
 }
 
-.container-navbar{
+.container-navbar {
+  z-index: 11111;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,39 +14,39 @@ body{
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  color: #DCD7C9;
+  color: #dcd7c9;
   box-sizing: border-box;
   opacity: 1;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
-.container-navbar.sticky{
-  background-color: #A27B5C;
+.container-navbar.sticky {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  background-color: #a27b5c;
   padding: 8px 80px;
 }
 .container-navbar.sticky .login {
-  background-color: #3F4F44;
+  background-color: #3f4f44;
 }
 
-.container-navbar.sticky .nav-item:hover{
-  border-bottom: 3.5px solid #3F4F44;
+.container-navbar.sticky .nav-item:hover {
+  border-bottom: 3.5px solid #3f4f44;
 }
 
-.container-navbar.hide-nav{
+.container-navbar.hide-nav {
   transform: translateY(-100px);
   opacity: 0;
 }
 
-.judul-nav{
+.judul-nav {
   position: relative;
   cursor: pointer;
-
 }
 
-.navbar{
+.navbar {
   width: 500px;
 }
-.nav-list{
+.nav-list {
   position: relative;
   display: flex;
   width: 100%;
@@ -53,22 +54,22 @@ body{
   align-items: center;
 }
 
-.nav-item{
+.nav-item {
   position: relative;
   font-size: 1.2em;
   box-sizing: border-box;
   padding-bottom: 5px;
 }
 
-.nav-item:hover{
-  border-bottom: 3px solid #A27B5C;
+.nav-item:hover {
+  border-bottom: 3px solid #a27b5c;
 }
 
-.nav-item.login{
+.nav-item.login {
   position: relative;
   width: 4em;
   height: 30px;
-  background-color: #A27B5C;
+  background-color: #a27b5c;
   text-align: center;
   line-height: 30px;
   border-radius: 5px;
@@ -77,19 +78,20 @@ body{
   border: none;
 }
 
-.nav-item.login:hover{
+.nav-item.login:hover {
   filter: brightness(110%);
 }
 
-.nav-link{
+.nav-link {
   position: relative;
   text-decoration: none;
-  color: #F6F9F9;
+  color: #f6f9f9;
 }
 
 /* mulai button-up */
 
 .btn-lock {
+  z-index: 111111;
   position: fixed;
   /* top: calc(50% - 32px);
   left: calc(50% - 32px); */
@@ -184,20 +186,21 @@ body{
 }
 
 /* style sectioh-home */
-.section-home{
+.section-home {
   display: grid;
   height: 100vh;
   /* grid-template: "image description" / repeat(); */
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   align-items: center;
   column-gap: 10px;
+  border-bottom: 5px solid red;
 }
 
-.section-bio{
-  color: #DCD7C9;
+.section-bio {
+  color: #dcd7c9;
   padding-right: 20px;
 }
-.section-bio h1{
+.section-bio h1 {
   font-size: 2rem;
   width: 73%;
   margin-bottom: 10px;
@@ -205,19 +208,19 @@ body{
   white-space: nowrap;
   border-right: 3px solid;
   animation: steps 6s steps(21) infinite,
-  cursor .6s step-end infinite alternate;
+    cursor 0.6s step-end infinite alternate;
 }
 @keyframes steps {
   0% {
     width: 0;
   }
-  50%{
+  50% {
     width: 73%;
   }
-  65%{
+  65% {
     width: 73%;
   }
-  100%{
+  100% {
     width: 0;
   }
 }
@@ -226,16 +229,213 @@ body{
     border-color: transparent;
   }
 }
-.section-image{
+.section-image {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   justify-self: center;
 }
-.tes{
+.section-image svg {
+  width: 100%;
+  transform: translateX(-8px);
+  margin-bottom: 10px;
+}
+.tes {
   border: 3px solid black;
   width: 300px;
   height: 300px;
 }
+.section-image button {
+}
+/* From Uiverse.io by alexroumi */
+.section-image button {
+  padding: 10px 20px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 14px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.section-image button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+.section-image button:hover {
+  color: #e8e8e8;
+}
+
+.section-image button:hover::before {
+  width: 100%;
+}
+
+/* section meaning */
+.section-meaning {
+  color: #DCD7C9;
+  display: grid;
+  height: 100vh;
+  border-bottom: 5px solid red;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.section-meaning-elemens {
+  /* color: #DCD7C9; */
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 550px;
+  height: 520px;
+  /* border: 4px solid red; */
+  align-self: center;
+  justify-self: center;
+}
+.section-meaning-elemens .teks-meaning {
+  overflow: hidden;
+  padding: 5px;
+  width: 380px;
+  /* height: 90px; */
+  /* border: 3px solid black; */
+  box-sizing: border-box;
+}
+.teks-meaning h2,
+.teks-meaning p{
+  color: #DCD7C9;
+  width: 100%;
+}
+.teks-meaning:nth-child(even){
+  margin-left: 170px;
+  transform: translateX(1000px);
+  transition: all 6s ease;
+}
+.teks-meaning:nth-child(odd){
+  margin-left: 20px;  
+  transform: translateX(-1000px);
+  transition: all 6s ease;  
+}
+
+/* efek teks meaning */
+.section-meaning-elemens.scrollEfek .teks-meaning{
+  transform: translateX(0px);
+}
+
+/* button meaning */
+
 
 /* logo section */
-.api{
-  filter: drop-shadow(4px 4px 10px rgba(230, 182, 51, 0.7));
+svg {
+  overflow: visible;
+}
+.api {
+  filter: drop-shadow(2px 2px 10px rgba(230, 182, 51, 0.5));
+}
+svg.scrollEfek .api {
+  animation: efekApi 3s ease-in-out forwards;
+
+}
+
+.orang,
+.kepala {
+  filter: drop-shadow(2px 2px 10px rgba(230, 182, 51, 0.5));
+}
+svg.scrollEfek .orang,
+svg.scrollEfek .kepala {
+  animation: efekOrang 3s ease-in-out forwards;
+}
+
+.quran {
+  filter: drop-shadow(2px 2px 10px rgba(230, 182, 51, 0.5));
+}
+svg.scrollEfek .quran {
+  animation: efekQuran 3s ease-in-out forwards;
+}
+
+svg.efekBalik .objec-animasi{
+  animation: efekBalik 1s ease-in-out forwards;
+}
+
+/* keyframes element */
+@keyframes efekQuran {
+  0% {
+    transform: translate(0px, 0px) scale(100%);
+  }
+  50%, 60% {
+    transform: translate(705px, 660px) scale(58%);
+  }
+  100% {
+    transform: translate(885px, 680px) scale(58%);
+  }
+}
+@keyframes efekApi {
+  0% {
+    transform: translate(0px, 0px) scale(100%);
+  }
+  50%, 60% {
+    transform: translate(705px, 660px) scale(58%);
+  }
+  100% {
+    transform: translate(820px, 510px);
+  }
+}
+@keyframes efekOrang {
+  0% {
+    transform: translate(0px, 0px) scale(100%);
+  }
+  50%, 60% {
+    transform: translate(705px, 660px) scale(58%);
+  }
+  100% {
+    transform: translate(500px, 605px) scale(53%);
+  }
+}
+@keyframes efekSabit {
+  0% {
+    transform: translate(0px, 0px) scale(100%);
+  }
+  50%, 60% {
+    transform: translate(705px, 660px) scale(58%);
+  }
+  100% {
+    transform: translate(490px, 760px) scale(58%);
+  }
+}
+/* keyframes return */
+@keyframes efekBalik {
+  0%{
+    transform: translate(705px, 660px) scale(58%);
+  }
+  100%{
+    transform: translate(0,0) scale(1);
+  }
+}
+
+.sabit {
+  filter: drop-shadow(2px 2px 10px rgba(230, 182, 51, 0.5));
+}
+svg.scrollEfek .sabit {
+  animation: efekSabit 3s ease-in-out forwards;
+}
+
+.section-meaning-logo {
+  align-self: center;
+  padding-left: 20px;
 }
